@@ -1,24 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   main.c
- * Author: Vilar
- *
- * Created on 30 de Outubro de 2017, 22:43
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
- * 
- */
-int main(int argc, char** argv) {
+int main(int argc, char** argv)
 
-    return (EXIT_SUCCESS);
+{
+    int num, x, par;
+    
+    printf("Escreve os pares que pretende: ");
+    scanf("%d", &num);
+    
+    while (par <= num - 1){
+
+        if(x % 2 == 0){
+                printf("%d ", x);
+                par += 1;
+            } 
+       ++x;
+    }
+    
+    return (0);
 }
-
