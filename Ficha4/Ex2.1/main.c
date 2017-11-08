@@ -1,53 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "Header.h"
 
-double multiplicar(int n1, int n2){
-    return n1 * n2;
-}
-long soma(int n1, int n2){
-    return n1 + n2;
-}
-double dividir(int n1, int n2){
-    return (float)n1 / n2;
-}
-long subtrair(int n1, int n2){
-    return n1 - n2;
-}
-
+int n1, n2, op;
+double resultado;
 
 int main(int argc, char** argv) {
-    int operacao, n1=10, n2=3;
-    double resultado;
     
-    printf("Escreve o primeiro numero: ");
+    puts("Escreve o primeiro numero: ");
     scanf("%d", &n1);
-
-    printf("Escreve o segundo numero: ");
+    puts("Escreve o segundo numero: ");
     scanf("%d", &n2);
     
-    printf("1-Somar\n");
-    printf("2-Subtrair\n");
-    printf("3-Mutiplicar\n");
-    printf("4-Dividir\n");
-    printf("Escolha uma opcao: ");
-    scanf("%d", &operacao);
-
-    switch (operacao){
-        case 1:
-            resultado=soma(n1, n2);
+    limparBufferEntrada();
+    
+    puts("Escolha a operacao que pretende efetuar? (x, -, +, /) ");
+    scanf("%c", &op);
+    
+    switch (op) {
+        case '+': resultado = soma();
             break;
-        case 2:
-            resultado=subtrair(n1, n2);
+        case '-': resultado = subtracao();
             break;
-        case 3:
-            resultado=multiplicar(n1, n2);
+        case '*': resultado = multiplicacao();
             break;
-        case 4:
-            resultado=dividir(n1, n2);
+        case '/': resultado = divisao();
             break;
-        default:
-            printf("Operacao Invalida.");      
+        default: puts("Operacao invalida!! ");
     }
-    printf("Resultado: %.2lf", resultado);
+    
+    printf("O resultado da operacao e: %.1lf\n ", resultado);
+    
     return (0);
 }
