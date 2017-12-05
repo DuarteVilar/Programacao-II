@@ -2,7 +2,7 @@
 #include <string.h>
 #include "utils.h"
 
-void clean_buffer(){
+void limparBufferEntrada(){
     char ch;
     while((ch = getchar()) != '\n' && ch !=EOF);
 }
